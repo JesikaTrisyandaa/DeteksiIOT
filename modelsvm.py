@@ -1,4 +1,6 @@
-class SVM:
+import numpy as np
+
+class SVM_Light:
     def __init__(self, bobot, bias):
         self.bobot = bobot
         self.bias = bias
