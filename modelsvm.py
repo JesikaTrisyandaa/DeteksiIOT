@@ -1,4 +1,4 @@
-class SVM_Light:
+class SVM:
     def __init__(self, bobot, bias):
         self.bobot = bobot
         self.bias = bias
