@@ -1,7 +1,7 @@
 import streamlit as st
 import numpy as np
-import pickle  
-from modelsvm import SVM
+import pickle
+from modelsvm import SVM_Light
 
 st.set_page_config(page_title="IoTect", layout="wide")
 
@@ -63,8 +63,8 @@ if st.button("PREDICT"):
         else:
             input_data = np.array([float(x) for x in user_inputs]).reshape(1, -1)
 
-            # Load model menggunakan pickle
-            with open("SVM_MODEL_MANUAL.pkl", "rb") as file:
+            # Load model ringan
+            with open("IIGHT.pkl", "rb") as file:
                 model = pickle.load(file)
 
             prediction = model.predict(input_data)
@@ -76,4 +76,4 @@ if st.button("PREDICT"):
     except ValueError as e:
         st.warning(f"⚠️ Pastikan semua input diisi dengan angka. Error: {e}")
     except FileNotFoundError:
-        st.error("❌ Model file tidak ditemukan.")
+        st.error("❌ File model tidak ditemukan.")
