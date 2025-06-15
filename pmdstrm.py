@@ -64,7 +64,7 @@ if st.button("PREDICT"):
             input_data = np.array([float(x) for x in user_inputs]).reshape(1, -1)
 
             # Load model ringan
-            with open("IIGHT.pkl", "rb") as file:
+            with open("SVM_MODEL_MANUAL.pkl", "rb") as file:
                 model = pickle.load(file)
 
             prediction = model.predict(input_data)
